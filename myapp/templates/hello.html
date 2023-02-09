@@ -1,0 +1,19 @@
+<h1>
+    hello {% if name %} {{ name }} {% else %} World! {% endif %}
+</h1>
+
+<ul>
+    {% for category in categories %}
+        <li>{{ category }}</li>
+    {% endfor %}
+
+</ul>
+
+{#filters#}
+
+<h3>
+    {{ 'hasoub academy'|title }}
+</h3>
+{% if messagees|length > 100 %}
+    <p>You have lots of messages </p>
+{% endif %}

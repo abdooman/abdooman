@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %} 
+    <h1 class="display-5 my-3">
+        Articles
+    </h1> 
+    {% for article in object_list %}
+         <div class="card my-2">
+            <div class="card-body">
+                
+                <div class="card-title">{{ article.title }}, {{ article.author.name}}</div>
+                <div class="card-text">{{ article.content }}</div>
+                <a href="{% url 'article_view' article.id %}" class="btn btn-primary btn-sm">View</a>
+                <a href="{% url 'article_update' article.id %}" class="btn btn-secondary btn-sm">Edit</a>
+            </div>
+         </div>
+    {% endfor %}
+{% endblock content %}
